@@ -82,6 +82,14 @@
       max-width: 100%;
     }
 
+    #output1 {
+      padding: .5rem .75rem;
+      margin: .5rem 0 1rem 0;
+      min-width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+
     input,
     input:hover,
     input:active,
@@ -177,7 +185,7 @@
       }
 
       .logo img {
-        max-height: 5rem;
+        max-height: 7rem;
       }
     }
 
@@ -227,11 +235,19 @@
     {{form.hidden_tag()}}
     {{form.file(id="filesection")}}
     {{form.input1(class="form-control", id="input1") }}
-    {{form.submit()}}
+    {{form.input2(class="form-control", id="output1")}}
+    {{form.submit}}
   </form>
 
 </body>
 
+<!-- <script>
+  document.getElementById("myAnchor").addEventListener("click", function () {
+    // event.preventDefault();
+    getElementById("output1").style.display = "block";
+
+  });
+</script> -->
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
 <script>
