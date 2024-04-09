@@ -28,7 +28,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      /* border: 5px solid red; */
+      /* border: 5px solid #2ca9e1; */
     }
 
 
@@ -44,18 +44,35 @@
       z-index: -1000;
     }
 
+    #filesection {
+      margin: 1rem 0 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-width: 100%;
+      max-width: 100%;
+      border: 2px dotted rgb(0, 0, 0);
+      padding: 2rem;
+    }
 
     .form-section {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       flex-direction: column;
-      border: 5px solid red;
+      border: 5px solid #2ca9e1;
       min-width: 70%;
       max-width: 70%;
       margin: 0 auto;
       padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.2);
+      /* background-color: rgba(255, 255, 255, 0.5) !important; */
+      background: rgba(255, 255, 255, 0);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     #input1 {
@@ -100,7 +117,7 @@
     }
 
     [type="submit"] {
-      background-color: red;
+      background-color: #2ca9e1;
       color: white;
       padding: 1rem 2rem;
       border-radius: 5px;
@@ -111,16 +128,14 @@
       font-size: 1.5rem;
     }
 
-    .inputfile {
-      width: 0.1px;
-      height: 0.1px;
-      opacity: 0;
+    #filesection {
+      opacity: 1;
       overflow: hidden;
-      position: absolute;
+      position: relative;
       z-index: -1;
     }
 
-    .inputfile+label {
+    #filesection+label {
       font-size: 1.25em;
       font-weight: 700;
       color: white;
@@ -129,12 +144,12 @@
       display: inline-block;
     }
 
-    .inputfile:focus+label,
-    .inputfile+label:hover {
-      background-color: red;
+    #filesection:focus+label,
+    #filesection+label:hover {
+      background-color: #2ca9e1;
     }
 
-    .inputfile+label {
+    #filesection+label {
       cursor: pointer;
       /* "hand" cursor */
     }
@@ -153,10 +168,20 @@
     }
 
     .logo img {
-      max-height: 5rem;
+      max-height: 9rem;
     }
 
-    @media screen and (max-width:1600px) {
+    @media screen and (max-width:1700px) {
+      body {
+        padding-top: 5vh;
+      }
+
+      .logo img {
+        max-height: 5rem;
+      }
+    }
+
+    @media screen and (max-width:1500px) {
       body {
         min-height: 130vh;
         max-height: 140vh;
@@ -167,6 +192,10 @@
       #inner_heading-canvas {
         min-height: 140vh;
         max-height: 140vh;
+      }
+
+      .logo img {
+        max-height: 4rem;
       }
     }
 
@@ -183,6 +212,10 @@
 <body>
 
   <canvas id="inner_heading-canvas" width="600" height="600"></canvas>
+
+  <div class="logo">
+    <img src="https://geraldarundass.com/AI/Logo2.png" alt="Image">
+  </div>
   <!-- <canvas id="inner_heading-canvas" width="600" height="600"></canvas>
 
   <div class="logo">
@@ -192,7 +225,7 @@
   <!-- enctype -->
   <form method="POST" class="form-section" enctype="multipart/form-data">
     {{form.hidden_tag()}}
-    {{form.file()}}
+    {{form.file(id="filesection")}}
     {{form.input1(class="form-control", id="input1") }}
     {{form.submit()}}
   </form>
@@ -282,7 +315,7 @@
     }
 
     draw() {
-      context.fillStyle = "#000";
+      context.fillStyle = "#fff";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       for (var i = 0; i < this.length; i++) {
@@ -324,7 +357,7 @@
           context.beginPath();
           context.moveTo(this.nodes[i].x, this.nodes[i].y);
           context.lineTo(this.nodes[this.nodes[i].connections[k]].x, this.nodes[this.nodes[i].connections[k]].y);
-          context.strokeStyle = "rgba(255,255,255," + this.nodes[i].depth / 4 + ")";
+          context.strokeStyle = "rgba(44,169,255,255" + this.nodes[i].depth / 2 + ")";
           context.stroke();
         }
       }
