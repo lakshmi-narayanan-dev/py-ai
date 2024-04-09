@@ -58,7 +58,7 @@
       background-color: rgba(255, 255, 255, 0.2);
     }
 
-    #name {
+    #input1 {
       padding: .5rem .75rem;
       margin: .5rem 0 1rem 0;
       min-width: 100%;
@@ -193,6 +193,7 @@
   <form method="POST" class="form-section" enctype="multipart/form-data">
     {{form.hidden_tag()}}
     {{form.file()}}
+    {{form.input1(class="form-control", id="input1") }}
     {{form.submit()}}
   </form>
 
