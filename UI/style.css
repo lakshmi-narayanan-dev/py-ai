@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  max-width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* border: 5px solid red; */
+}
+
+
+#inner_heading-canvas {
+  opacity: 1;
+  position: absolute;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1000;
+}
+
+
+.form-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 5px solid red;
+  min-width: 70%;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#name {
+  padding: .5rem .75rem;
+  margin: .5rem 0 1rem 0;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+input,
+input:hover,
+input:active,
+input:focus {
+  outline: none !important;
+}
+
+label {
+  color: white !important;
+}
+
+#qa {
+  margin-top: 2rem;
+}
+
+/* ------------------------- */
+/* Drag Drop Section */
+
+.drag-drop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100%;
+  max-width: 100%;
+  border: 2px dotted white;
+  padding: 2rem;
+}
+
+.drag-drop h2 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+[type="submit"] {
+  background-color: red;
+  color: white;
+  padding: .5rem 1rem;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  padding: .5rem;
+  background-color: black;
+  display: inline-block;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+  background-color: red;
+}
+
+.inputfile+label {
+  cursor: pointer;
+  /* "hand" cursor */
+}
