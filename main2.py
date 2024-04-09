@@ -21,7 +21,7 @@ class UploadFileForm(FlaskForm):
     input1 = StringField("Input 1", validators=[DataRequired()])
     # input2 = StringField("Input 2", validators=[DataRequired()])
 
-    submit = SubmitField("Upload File")
+    submit = SubmitField("Ask Us!")
 
 @app.route('/', methods=['GET', "POST"])
 @app.route('/home', methods=['GET', "POST"]) 
