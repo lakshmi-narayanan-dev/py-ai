@@ -310,8 +310,9 @@
       background: linear-gradient(120deg, #75d3ff, #8dff76);
     }
 
-    .right-third-row .prompt span {
+    .right-third-row .prompt:before {
       position: absolute;
+      content: "01";
       left: -2rem;
       top: -2rem;
       font-size: 150px;
@@ -319,8 +320,16 @@
       color: rgb(0, 0, 0);
     }
 
-    .prompt:hover span {
-      opacity: .2 !important;
+    .right-third-row .prompt2:before {
+      content: "02";
+    }
+
+    .right-third-row .prompt3:before {
+      content: "03";
+    }
+
+    .right-third-row .prompt4:before {
+      content: "04";
     }
 
     .right-third-row .prompt:last-child {
@@ -346,9 +355,14 @@
       max-width: 85%;
       border: none;
       outline: none;
-      /* border-bottom: 1px solid #ccc; */
+      text-align: left !important;
+      padding: 0 !important;
+      border-bottom: 1px solid #ccc;
     }
 
+    #inputtag {
+      padding: 0 !important;
+    }
 
     .i-tag-prompt {
       display: flex;
@@ -531,39 +545,35 @@
 
     <div class="right-second-row">
       <h2>
-        Hello Visitor.
+        Hello John.
       </h2>
       <h4>
-        We Can Provide <span id="app"></span>
+        How Can I Help You Today.
+        <!-- <span id="app"></span> -->
       </h4>
     </div>
 
 
     <div class="right-third-row">
-      <div class="prompt">
-        What is the long-term safety profile of Talimizumab in pediatric patients?
-        <span>01</span>
+      <div class="prompt prompt1">What is the long-term safety profile of Talimizumab in pediatric patients?
       </div>
-      <div class="prompt">
-        What were the reported adverse events in the Phase II trial of Talimizumab?
-        <span>02</span>
+      <div class="prompt prompt2">What were the reported adverse events in the Phase II trial of Talimizumab?
+        <!-- <span>02</span> -->
       </div>
-      <div class="prompt">
-        Provide a cost-benefit analysis report of Talimizumab vs. its competitors.
-        <span>03</span>
+      <div class="prompt prompt3">Provide a cost-benefit analysis report of Talimizumab vs. its competitors.
+        <!-- <span>03</span> -->
       </div>
-      <div class="prompt">
-        Provide a comparative analysis of Talimizumab vs. standard treatment.
-        <span>04</span>
+      <div class="prompt prompt4">Provide a comparative analysis of Talimizumab vs. standard treatment.
+        <!-- <span>04</span> -->
       </div>
     </div>
 
 
     <div class="last-section-prompt">
-      <input type="text" class="no-outline" placeholder="Enter Something">
+      <input type="text" class="no-outline" id="inputField" placeholder="Enter Something">
       <div class="i-tag-prompt">
-        <i class="fa-solid fa-upload"></i>
-
+        <i class="fa-solid fa-location-arrow" id="sendDataBtn"></i>
+        <!-- <i class="fa-solid fa-circle-play" id="process"></i> -->
         <i class="fa-solid fa-microphone"></i>
       </div>
     </div>
@@ -609,6 +619,45 @@
 
     // console.log('clicked');
   });
+</script>
+
+<script>
+  // Get the input field
+  const inputField = document.getElementById('inputField');
+
+  // Add click event listener to each div
+  document.querySelectorAll('.prompt').forEach(div => {
+    div.addEventListener('click', function () {
+      // Set new content for the input field
+      inputField.value = div.textContent;
+    });
+  });
+
+  // Add click event listener to the button
+  document.getElementById('sendDataBtn').addEventListener('click', function () {
+    // Get the value from the input field
+    const inputData = document.getElementById('inputField').value;
+
+    // Send data to Python using fetch API
+    fetch('/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({ 'input_data': inputData })
+    })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Log the response from the server
+        // alert("Data sent successfully!"); // Show an alert message
+      })
+      .catch(error => {
+        console.error('Error:', error); // Log any errors that occur
+        // alert("An error occurred while sending data!"); // Show an alert message for errors
+      });
+  });
+</script>
+
 </script>
 
 
