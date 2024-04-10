@@ -633,8 +633,8 @@
     });
   });
 
-  // Add click event listener to the button
-  document.getElementById('sendDataBtn').addEventListener('click', function () {
+  // Function to send data to Python
+  function sendDataToPython() {
     // Get the value from the input field
     const inputData = document.getElementById('inputField').value;
 
@@ -655,6 +655,18 @@
         console.error('Error:', error); // Log any errors that occur
         // alert("An error occurred while sending data!"); // Show an alert message for errors
       });
+  }
+
+  // Add click event listener to the button
+  document.getElementById('sendDataBtn').addEventListener('click', sendDataToPython);
+
+  // Add key press event listener to the input field
+  document.getElementById('inputField').addEventListener('keypress', function (event) {
+    // Check if Enter key is pressed (keyCode 13)
+    if (event.keyCode === 13) {
+      // Call the sendDataToPython function
+      sendDataToPython();
+    }
   });
 </script>
 
