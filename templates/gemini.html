@@ -803,6 +803,7 @@
       // Call the sendDataToPython function
       const audio2 = new Audio("https://sounds.pond5.com/app-magic-button-1-sound-effect-035407960_nw_prev.m4a");
       audio2.play();
+      document.getElementById('inputField').value = ''; // Clear the input field value
       sendDataToPython();
 
       // Toggle visibility of elements after sending data
@@ -815,6 +816,13 @@
   document.getElementById('sendDataBtn').addEventListener("click", () => {
     audio2.play();
   });
+
+  function clearInputField() {
+    document.getElementById('inputField').value = ''; // Clear the input field value
+  }
+
+  // Add click event listener to the input field
+  document.getElementById('sendDataBtn').addEventListener('click', clearInputField);
 </script>
 
 </script>
