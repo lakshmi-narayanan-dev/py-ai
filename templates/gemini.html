@@ -16,7 +16,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
     * {
       padding: 0;
@@ -24,7 +25,8 @@
       box-sizing: border-box;
       font-size: 16px;
       line-height: 1.5;
-      font-family: "Josefin Sans", sans-serif;
+      font-family: "Kode Mono", monospace;
+      /* font-family: "Josefin Sans", sans-serif; */
     }
 
     /* Hide all scrollable bars */
@@ -228,8 +230,8 @@
     }
 
     .right-first-row .r-f-r-2 {
-      min-width: 50vw;
-      max-width: 60vw;
+      min-width: 45vw;
+      max-width: 55vw;
       background-color: red;
       position: relative;
       opacity: 0;
@@ -237,8 +239,8 @@
     }
 
     .r-f-r-2-toggle {
-      min-width: 67vw !important;
-      max-width: 70vw !important;
+      min-width: 62vw !important;
+      max-width: 72vw !important;
       background-color: rgb(77, 255, 6) !important;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -294,8 +296,8 @@
 
     .right-third-row .prompt {
       border: .5px solid black;
-      margin: 0 .5% 0 0;
-      min-height: 17rem;
+      margin: 3.5% 1% 3.5% 0;
+      min-height: 20rem;
       max-width: 25%;
       padding: 1.5rem;
       font-size: 1.5rem;
@@ -336,6 +338,35 @@
       margin: 0;
     }
 
+    /* Fourth Row */
+    #chatContainer {
+      min-width: 50vw;
+      max-width: 50vw;
+      /* min-height: 100vh; */
+      min-height: fit-content;
+      max-height: max-content;
+      /* margin-bottom: 2.5rem; */
+      /* padding: 5rem 0; */
+      /* background-color: #00aeff; */
+      position: relative;
+      height: 100vh;
+      /* Adjust height as needed */
+      overflow-y: auto;
+    }
+
+    .chat-messages {
+      padding-bottom: 50px;
+      overflow: hidden;
+    }
+
+
+
+
+    @keyframes typewriter {
+      from {
+        width: 0;
+      }
+    }
 
     /* Last Section */
     .last-section-prompt {
@@ -381,6 +412,21 @@
       border-radius: 50%;
     }
 
+    /* Inpyt Field */
+    .input-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 10px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-message::before {
+      content: "- ";
+      margin-right: 1rem;
+    }
 
     @media screen and (max-width:1650px) {
       .last-section-prompt {
@@ -407,9 +453,15 @@
         margin: 5% 0;
       }
 
+
+      /* Fourth Row */
+      #chatContainer {
+        min-width: 65vw;
+      }
+
       .right-third-row .prompt {
         font-size: 1.25rem;
-        min-height: 15rem;
+        min-height: 17rem;
       }
     }
 
@@ -555,19 +607,14 @@
 
 
     <div class="right-third-row">
-      <div class="prompt prompt1">What is the long-term safety profile of Talimizumab in pediatric patients?
-      </div>
-      <div class="prompt prompt2">What were the reported adverse events in the Phase II trial of Talimizumab?
-        <!-- <span>02</span> -->
-      </div>
-      <div class="prompt prompt3">Provide a cost-benefit analysis report of Talimizumab vs. its competitors.
-        <!-- <span>03</span> -->
-      </div>
-      <div class="prompt prompt4">Provide a comparative analysis of Talimizumab vs. standard treatment.
-        <!-- <span>04</span> -->
-      </div>
+      <div class="prompt prompt1">What is the long-term safety profile of Talimizumab in pediatric patients?</div>
+      <div class="prompt prompt2">What were the reported adverse events in the Phase II trial of Talimizumab?</div>
+      <div class="prompt prompt3">Provide a cost-benefit analysis report of Talimizumab vs. its competitors.</div>
+      <div class="prompt prompt4">Provide a comparative analysis of Talimizumab vs. standard treatment.</div>
     </div>
 
+    <!-- Container -->
+    <div id="chatContainer" class="typewriter"></div>
 
     <div class="last-section-prompt">
       <input type="text" class="no-outline" id="inputField" placeholder="Enter Something">
@@ -638,6 +685,9 @@
     // Get the value from the input field
     const inputData = document.getElementById('inputField').value;
 
+    // Append the user's message to the chat container
+    appendMessage(inputData, 'user');
+
     // Send data to Python using fetch API
     fetch('/submit', {
       method: 'POST',
@@ -650,11 +700,45 @@
       .then(data => {
         console.log(data); // Log the response from the server
         // alert("Data sent successfully!"); // Show an alert message
+        appendMessage(data, 'bot');
       })
       .catch(error => {
         console.error('Error:', error); // Log any errors that occur
         // alert("An error occurred while sending data!"); // Show an alert message for errors
       });
+  }
+
+  // Function to toggle visibility of elements
+  function toggleElementsVisibility() {
+    document.querySelector('.right-second-row').style.display = 'none';
+    document.querySelector('.right-third-row').style.display = 'none';
+    // document.querySelector('.last-section-prompt').style.display = 'none';
+  }
+
+  // Function to append a message to the chat container
+  function appendMessage(message, sender) {
+    const chatContainer = document.getElementById('chatContainer');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    if (sender === 'user') {
+      messageElement.classList.add('user-message');
+    } else {
+      messageElement.classList.add('bot-message');
+    }
+
+    // Toggle visibility of elements after appending the first message
+    if (document.querySelectorAll('.message').length === 1) {
+      toggleElementsVisibility();
+    }
+
+    // Scroll the chat container to the bottom
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    // Add margin or padding to create a gap between messages
+    messageElement.style.margin = '5rem 0'; // Adjust the value as needed
+
+    messageElement.textContent = message;
+    chatContainer.appendChild(messageElement);
   }
 
   // Add click event listener to the button
@@ -666,6 +750,9 @@
     if (event.keyCode === 13) {
       // Call the sendDataToPython function
       sendDataToPython();
+
+      // Toggle visibility of elements after sending data
+      toggleElementsVisibility();
     }
   });
 </script>
