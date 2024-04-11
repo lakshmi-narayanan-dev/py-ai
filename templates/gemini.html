@@ -29,8 +29,9 @@
       /* font-family: "Josefin Sans", sans-serif; */
     }
 
+    /* ----------------------------- */
+    /* All Scrollable Area Css */
     /* Hide all scrollable bars */
-    /* Quote 3 Entire scroll section */
     ::-webkit-scrollbar {
       height: 1px !important;
       width: 0px !important;
@@ -48,6 +49,10 @@
       width: 1px !important;
     }
 
+    /* ----------------------------- */
+
+    /* ----------------------------- */
+    /* Body & html */
     body {
       max-width: 100vw !important;
       max-width: 100%;
@@ -71,7 +76,12 @@
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='31' fill='none' viewBox='0 0 26 31'%3E%3Cpath fill='%23fff' fill-rule='evenodd' stroke='%23010101' stroke-linecap='square' stroke-width='2.5' d='M21.993 14.425 2.549 2.935l4.444 23.108 4.653-10.002 10.347-1.616Z' clip-rule='evenodd'/%3E%3C/svg%3E"), auto !important;
     }
 
+    /* ----------------------------- */
+
+    /* ----------------------------- */
     /* Sidebar */
+
+    /* Sidebar main */
     .sidebar-section-left {
       min-width: 17.5vw;
       max-width: 17.5vw;
@@ -84,9 +94,23 @@
       overflow-y: scroll;
       overflow-x: visible;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-      /* overflow: hidden; */
     }
 
+    /* Left Sidebar to Hide when the button is been clicked */
+    .toggle-hide {
+      margin-left: -17vw !important;
+      /* overflow: hidden; */
+      padding: .75rem 3rem .75rem 1rem;
+      /* z-index: -2000; */
+      transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* ----------------------------- */
+
+    /* --------------------- */
+    /* Daily Prompts on Sidebar */
+    /* Entire Section */
+    /* Click to show new prompt */
     .New-prompt {
       /* border: 1px solid red; */
       background-color: #a3d5ec;
@@ -109,26 +133,6 @@
       border-radius: 50%;
     }
 
-    .arrow-helps-toggle i {
-      color: white;
-      font-size: 1rem;
-    }
-
-    .toggle-hide {
-      margin-left: -17vw !important;
-      /* overflow: hidden; */
-      padding: .75rem 3rem .75rem 1rem;
-      /* z-index: -2000; */
-      transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .toggle-width {
-      min-width: 100vw !important;
-    }
-
-
-
-    /* Daily Prompts on Sidebar */
     .daily-prompts {
       margin-top: 2rem;
       /* background-color: red; */
@@ -136,16 +140,7 @@
       overflow-y: scroll !important;
     }
 
-    .daily-prompts.quote-3::-webkit-scrollbar {
-      height: 0 !important;
-    }
-
-    .daily-prompts::-webkit-scrollbar-track {
-      display: none !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
-    }
-
+    /* user Prompts saved */
     .daily-prompts h2 {
       font-weight: 500;
       margin: 1rem 0;
@@ -158,6 +153,7 @@
       text-overflow: ellipsis;
     }
 
+    /* User Prompt date/day saved */
     .daily-prompts-heading {
       margin: 2.5rem 0 1rem;
       font-size: 1.5rem;
@@ -165,11 +161,15 @@
       text-underline-offset: 8px;
     }
 
+    /* User prompt date/Day First Margin */
     .daily-prompts-heading:first-child {
       margin: 0rem 0 1rem !important;
     }
 
-    /* Right Section */
+    /* --------------------- */
+
+    /* ----------------------------- */
+    /* Right Section before the button is been clicked */
     .main-section-right {
       min-width: 82.5vw;
       max-width: 90vw !important;
@@ -184,31 +184,43 @@
       padding: 0% 0;
       position: relative;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      /* background-image: linear-gradient(-90deg, #CF77F3 0%, #009BFF 47%, #2AC9DB 100%); */
-      /* border-radius: 100px; */
-      /* -webkit-background-filter: blur(50px); */
       overflow-y: scroll;
     }
 
+    /* Right Section width when the button is been clicked */
+    .toggle-width {
+      min-width: 100vw !important;
+    }
+
+    /* ----------------------------- */
+
+    /* --------------------- */
     /* Absolute Icon */
     .arrow-helps-toggle {
       position: absolute;
       left: 0%;
-      top: 80%;
+      top: 70%;
       padding: .75rem;
       /* border-radius: 0 5px 5px 0; */
-      background-color: #527375;
+      background-color: #a3d5ec;
     }
 
+    /* Arrow to Click to Hide or Show */
+    .arrow-helps-toggle i {
+      color: rgb(0, 0, 0);
+      font-size: 1rem;
+    }
+
+    /* Rotate Arrow When the button is been clicked */
     .toggle-rotate {
       transform: rotate(180deg) !important;
       padding: .75rem .75rem .6rem .75rem !important;
-      /* border-radius: 5px 0 0 5px; */
       left: 0%;
-
-      /* background-color: red !important; */
     }
 
+    /* ----------------------------- */
+
+    /* --------------------- */
     /* Right Section 1st Row */
     .right-first-row {
       display: flex;
@@ -262,12 +274,12 @@
       margin: 0 1rem;
     }
 
+    /* ----------------------------- */
 
+    /* ----------------------------- */
     /* Second Row */
-
     .right-second-row {
       min-width: 50vw;
-      /* background-color: #49b33f; */
     }
 
     .right-second-row h2 {
@@ -285,6 +297,9 @@
       margin-top: 1rem;
     }
 
+    /* ----------------------------- */
+
+    /* ----------------------------- */
     /* Third Row */
     .right-third-row {
       display: flex;
@@ -305,7 +320,6 @@
       position: relative;
       overflow: hidden;
     }
-
 
     .prompt:hover {
       background: -webkit-linear-gradient(120deg, #75d3ff, #8dff76);
@@ -338,39 +352,28 @@
       margin: 0;
     }
 
+    /* ----------------------------- */
+
+    /* ----------------------------- */
     /* Fourth Row */
     #chatContainer {
       min-width: 50vw;
       max-width: 50vw;
-      /* min-height: 100vh; */
       min-height: fit-content;
       max-height: max-content;
-      /* margin-bottom: 2.5rem; */
-      /* padding: 5rem 0; */
-      /* background-color: #00aeff; */
       position: relative;
       height: 100vh;
       /* Adjust height as needed */
       overflow-y: auto;
     }
 
-    .chat-messages {
-      padding-bottom: 50px;
-      overflow: hidden;
-    }
+    /* ----------------------------- */
 
-
-
-
-    @keyframes typewriter {
-      from {
-        width: 0;
-      }
-    }
-
+    /* ----------------------------- */
+    /* Input tag section */
     /* Last Section */
     .last-section-prompt {
-      /* border: 1px solid black; */
+      border: 1px solid #00aeff;
       min-width: 50vw;
       margin-bottom: 3%;
       padding: 1.2rem 2rem;
@@ -381,6 +384,7 @@
       justify-content: space-between;
     }
 
+    /* Inside the last row - input tag */
     .last-section-prompt input {
       min-width: 85%;
       max-width: 85%;
@@ -391,10 +395,7 @@
       border-bottom: 1px solid #ccc;
     }
 
-    #inputtag {
-      padding: 0 !important;
-    }
-
+    /* Both i tag inside the last row */
     .i-tag-prompt {
       display: flex;
       align-items: center;
@@ -402,7 +403,6 @@
       /* background-color: #49b33f; */
       min-width: 12%;
       max-width: 15%;
-
     }
 
     .last-section-prompt i {
@@ -412,20 +412,53 @@
       border-radius: 50%;
     }
 
-    /* Inpyt Field */
-    .input-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+    /* .user-message::before {
+      content: "-> ";
+      margin-right: 1rem;
       background-color: #ffffff;
-      padding: 10px;
-      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      color: rgb(0, 0, 0);
+      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1.5rem;
+      min-width: 1rem;
+      padding: .8rem 1rem;
+      border-radius: 50%;
+      font-weight: 900 !important;
+    } */
+
+    .user-you-main {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
     }
 
-    .user-message::before {
-      content: "- ";
-      margin-right: 1rem;
+    .fa-comment,
+    .fa-robot {
+      background-color: black !important;
+      color: #ffffff !important;
+      padding: .75rem;
+      min-width: 2.5rem;
+      margin-right: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      /* border-radius: 50%; */
+    }
+
+
+
+    span.user-you,
+    span.user-you-2 {
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #000000 !important;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: 2px underline;
+      text-underline-offset: 8px;
+      margin-left: 1.5rem;
     }
 
     @media screen and (max-width:1650px) {
@@ -656,6 +689,7 @@
     audio.play();
   });
 
+
   openBtn.addEventListener("click", function () {
     // Toggle makes its yes or no condition = yes means add & no remove remove
 
@@ -720,26 +754,44 @@
     const chatContainer = document.getElementById('chatContainer');
     const messageElement = document.createElement('div');
     messageElement.classList.add('message');
+
+    // Check sender to determine the icon and message placement
     if (sender === 'user') {
       messageElement.classList.add('user-message');
+      messageElement.innerHTML = `<div class="user-you-main">
+      <i class="fa-solid fa-comment"></i> <span class="user-you">You</span>
+      </div> 
+      <br>
+      ${message}`;
+
     } else {
       messageElement.classList.add('bot-message');
+      messageElement.innerHTML = `<div class="user-you-main"><i class="fas fa-robot"></i> <span class="user-you-2">MasterAI</span> </span>
+        </div>
+      <br>
+      ${message}`;
     }
 
     // Toggle visibility of elements after appending the first message
-    if (document.querySelectorAll('.message').length === 1) {
+    if (document.querySelectorAll('.message').length === 0) {
       toggleElementsVisibility();
     }
 
     // Scroll the chat container to the bottom
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    // chatContainer.scrollTop = chatContainer.scrollHeight;
+    // Scroll the chat container to the bottom
+    setTimeout(() => {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }, 0);
 
     // Add margin or padding to create a gap between messages
-    messageElement.style.margin = '5rem 0'; // Adjust the value as needed
+    messageElement.style.margin = '3rem 0'; // Adjust the value as needed
 
-    messageElement.textContent = message;
+    // messageElement.textContent = message;
     chatContainer.appendChild(messageElement);
   }
+
+
 
   // Add click event listener to the button
   document.getElementById('sendDataBtn').addEventListener('click', sendDataToPython);
@@ -749,11 +801,19 @@
     // Check if Enter key is pressed (keyCode 13)
     if (event.keyCode === 13) {
       // Call the sendDataToPython function
+      const audio2 = new Audio("https://sounds.pond5.com/app-magic-button-1-sound-effect-035407960_nw_prev.m4a");
+      audio2.play();
       sendDataToPython();
 
       // Toggle visibility of elements after sending data
       toggleElementsVisibility();
     }
+  });
+
+
+  const audio2 = new Audio("https://sounds.pond5.com/app-magic-button-1-sound-effect-035407960_nw_prev.m4a");
+  document.getElementById('sendDataBtn').addEventListener("click", () => {
+    audio2.play();
   });
 </script>
 
