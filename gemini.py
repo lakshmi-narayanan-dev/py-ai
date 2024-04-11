@@ -15,7 +15,7 @@ def submit():
     # Or you can write it to a file
     with open('data.txt', 'w') as file:
         file.write(data)
-    return 'Data received successfully'
+    return ''
 
 if __name__ == '__main__':
     app.run(debug=True)
