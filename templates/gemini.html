@@ -15,6 +15,9 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     /* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); */
     /* @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap'); */
@@ -299,7 +302,7 @@
     /* ----------------------------- */
     /* Second Row */
     .right-second-row {
-      min-width: 50vw;
+      min-width: 60vw;
     }
 
     .right-second-row h2 {
@@ -308,7 +311,7 @@
       -webkit-background-clip: text;
       background-clip: text; */
       color: black !important;
-      font-size: 6rem;
+      font-size: 5rem;
       margin-top: 2rem;
       font-weight: 500 !important;
 
@@ -320,6 +323,7 @@
       opacity: 1;
       font-weight: 500 !important;
       margin-top: 1rem;
+      margin-bottom: 2rem;
     }
 
     /* ----------------------------- */
@@ -330,8 +334,10 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      min-width: 50vw;
-      max-width: 50vw;
+      min-width: 60vw;
+      max-width: 60vw;
+      position: relative;
+      padding-top: 1rem;
     }
 
     .right-third-row .prompt {
@@ -346,13 +352,20 @@
       overflow: hidden;
     }
 
+    .Ask-anything-like {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.6rem !important;
+    }
+
     .prompt:hover {
       /* background: -webkit-linear-gradient(120deg, #75d3ff, #8dff76);
       background: linear-gradient(120deg, #75d3ff, #8dff76); */
       background-color: #a3d5ec;
     }
 
-    .right-third-row .prompt:before {
+    /* .right-third-row .prompt:before {
       position: absolute;
       content: "01";
       left: -2rem;
@@ -360,9 +373,9 @@
       font-size: 150px;
       opacity: .05;
       color: rgb(0, 0, 0);
-    }
+    } */
 
-    .right-third-row .prompt2:before {
+    /* .right-third-row .prompt2:before {
       content: "02";
     }
 
@@ -372,7 +385,7 @@
 
     .right-third-row .prompt4:before {
       content: "04";
-    }
+    } */
 
     .right-third-row .prompt:last-child {
       margin: 0;
@@ -404,8 +417,8 @@
     /* ----------------------------- */
     /* Fourth Row */
     #chatContainer {
-      min-width: 50vw;
-      max-width: 50vw;
+      min-width: 60vw;
+      max-width: 60vw;
       min-height: fit-content;
       max-height: max-content;
       position: relative;
@@ -421,9 +434,9 @@
     /* Last Section */
     .last-section-prompt {
       border: 1px solid #00aeff;
-      min-width: 50vw;
+      min-width: 60vw;
       margin-bottom: 3%;
-      padding: 1.2rem 2rem;
+      padding: 1rem 2rem;
       border-radius: 3rem;
       background-color: white;
       display: flex;
@@ -497,15 +510,25 @@
     .fa-robot {
       /* background-color: black !important; */
       color: #000000 !important;
-      /* padding: .75rem; */
-      /* min-width: 2.5rem; */
-      max-height: 2rem;
+      padding: .5rem;
+      max-height: 3rem;
       margin-right: 0 !important;
       display: flex;
       align-items: center;
       font-size: 1.5rem;
       justify-content: flex-start;
       border-radius: 50%;
+      /* border-radius: 40% 60% 72% 28% / 40% 30% 70% 60%; */
+      background-color: #a3d5ec;
+    }
+
+    .fa-comment {
+      padding-left: .75rem;
+    }
+
+    .fa-robot {
+      min-height: 3.2rem;
+      max-height: 3.2rem;
     }
 
     span.user-you,
@@ -533,14 +556,18 @@
       }
 
       .right-second-row h2 {
-        font-size: 4.5rem;
+        font-size: 4rem;
         margin-top: 0;
       }
 
       .right-second-row h4 {
         font-size: 1.5rem !important;
         margin-top: .5rem;
-        margin-bottom: 1.15rem;
+        margin-bottom: 2rem;
+      }
+
+      .Ask-anything-like {
+        font-size: 1.5rem !important;
       }
 
       .right-third-row {
@@ -562,17 +589,22 @@
 
     @media screen and (max-width:1450px) {
       .right-second-row h2 {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
 
       .right-second-row h4 {
         font-size: 1.25rem !important;
         margin-top: .5rem;
+        margin-bottom: 1rem;
+      }
+
+      .Ask-anything-like {
+        font-size: 1.25rem !important;
       }
 
       .right-third-row .prompt {
         font-size: 1rem;
-        min-height: 13rem;
+        min-height: 12rem;
       }
     }
 
@@ -705,34 +737,35 @@
     </div>
 
     <div class="right-second-row">
-      <h2>
-        Hello John
+      <h2 data-aos="fade-up" data-aos-delay="500">
+        Hello, Medico Master...!!!
       </h2>
-      <h4>
+      <h4 data-aos="fade-up" data-aos-delay="1000">
         How Can I Help You Today?
-        <!-- <span id="app"></span> -->
       </h4>
     </div>
 
 
     <div class="right-third-row">
-      <div class="prompt prompt1">What is the long-term safety profile of Talimizumab in pediatric patients?<i
-          class="fa-regular fa-face-laugh"></i>
+      <div class="Ask-anything-like">
+        Ask Anything Like,
       </div>
-      <div class="prompt prompt2">What were the reported adverse events in the Phase II trial of Talimizumab?<i
-          class="fa-solid fa-filter"></i></div>
-      <div class="prompt prompt3">Provide a cost-benefit analysis report of Talimizumab vs. its competitors.<i
-          class="fa-solid fa-notes-medical"></i></div>
-      <div class="prompt prompt4">Provide a comparative analysis of Talimizumab vs. standard treatment.<i
-          class="fa-solid fa-chart-simple"></i></div>
+      <div class="prompt prompt1" data-aos="fade-up" data-aos-delay="1500">What is the long-term safety profile of
+        Talimizumab in pediatric patients?<i class="fa-regular fa-face-laugh"></i>
+      </div>
+      <div class="prompt prompt2" data-aos="fade-up" data-aos-delay="1700">What were the reported adverse events in the
+        Phase II trial of Talimizumab?<i class="fa-solid fa-filter"></i></div>
+      <div class="prompt prompt3" data-aos="fade-up" data-aos-delay="1900">Provide a cost-benefit analysis report of
+        Talimizumab vs its competitors.<i class="fa-solid fa-notes-medical"></i></div>
+      <div class="prompt prompt4" data-aos="fade-up" data-aos-delay="2100">Provide a comparative analysis of Talimizumab
+        vs standard treatment.<i class="fa-solid fa-chart-simple"></i></div>
     </div>
 
     <!-- Container -->
     <div id="chatContainer" class="typewriter"></div>
 
     <div class="last-section-prompt">
-      <input type="text" class="no-outline" id="inputField"
-        placeholder="Ask Me Anything to powerUp Business Decisions...">
+      <input type="text" class="no-outline" id="inputField" placeholder="Search Your Answers with Sherlock...">
       <div class="i-tag-prompt">
         <i class="fa-solid fa-location-arrow" id="sendDataBtn"></i>
         <!-- <i class="fa-solid fa-circle-play" id="process"></i> -->
@@ -743,27 +776,8 @@
   </div>
 </body>
 
-
-<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<!-- Play Audio while click the button & Expand according with sidebar gets hidden-->
 <script>
-  var app = document.getElementById('app');
-
-  var typewriter = new Typewriter(app, {
-    loop: true
-  });
-
-  typewriter.typeString('Useful Prompt!')
-    .pauseFor(5000)
-    .deleteAll()
-    .typeString('Creative Content!')
-    .pauseFor(5000)
-    .deleteAll()
-    .typeString('Cue Information!')
-    .pauseFor(5000)
-    .start();
-</script>
-<script>
-
   const openBtn = document.getElementById("arrow-helps-toggle");
 
   const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
@@ -784,6 +798,7 @@
   });
 </script>
 
+<!-- If the input field is hit & hide the text files -->
 <script>
   // Get the input field
   const inputField = document.getElementById('inputField');
@@ -792,7 +807,9 @@
   document.querySelectorAll('.prompt').forEach(div => {
     div.addEventListener('click', function () {
       // Set new content for the input field
-      inputField.value = div.textContent;
+      // inputField.value = div.textContent.trim();
+      inputField.value = div.textContent.replace(/\s+/g, ' ').trim();
+
     });
   });
 
@@ -841,14 +858,15 @@
     if (sender === 'user') {
       messageElement.classList.add('user-message');
       messageElement.innerHTML = `<div class="user-you-main">
-      <img src="https://lh3.googleusercontent.com/ogw/AF2bZyjXxy2E2tneorvONmFtJc51aDpVK1E6jsc-3YqvC6I=s32-c-mo" class="fa-comment" /> <span class="user-you">You</span>
+      <img src="https://geraldarundass.com/AI/Logos/User.png" class="fa-comment" alt="image" /> <span class="user-you">You</span>
       </div> 
       <br>
       ${message}`;
 
     } else {
       messageElement.classList.add('bot-message');
-      messageElement.innerHTML = `<div class="user-you-main"><i class="fas fa-robot"></i> <span class="user-you-2">The AI Master</span> </span>
+      messageElement.innerHTML = `<div class="user-you-main">
+         <img src="https://geraldarundass.com/AI/Logos/Bot.png" class="fa-robot" alt="image" /><span class="user-you-2">Sherlock</span>
         </div>
       <br>
       ${message}`;
@@ -869,15 +887,13 @@
     }, 0);
 
     // Add margin or padding to create a gap between messages
-    messageElement.style.margin = '3rem 0'; // Adjust the value as needed
+    messageElement.style.margin = '1.5rem 0';
+    // messageElement.style.background = 'yellow'; // Adjust the value as needed
 
     // messageElement.textContent = message;
     chatContainer.appendChild(messageElement);
 
-
-
   }
-
 
 
   // Add click event listener to the button
@@ -913,8 +929,18 @@
   // Add click event listener to the input field
   document.getElementById('sendDataBtn').addEventListener('click', clearInputField);
 
+
+
+
+
+  // =================================
+
 </script>
 
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
 </script>
 
 
