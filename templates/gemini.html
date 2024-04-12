@@ -157,8 +157,8 @@
     .daily-prompts-heading {
       margin: 2.5rem 0 1rem;
       font-size: 1.5rem;
-      text-decoration: 1px solid underline;
-      text-underline-offset: 8px;
+      /* text-decoration: 1px solid underline;
+      text-underline-offset: 8px; */
     }
 
     /* User prompt date/Day First Margin */
@@ -180,7 +180,8 @@
       justify-content: space-between;
       flex-direction: column;
       background: #a3d5ec;
-      background: radial-gradient(at center, #a3d5ec, #FFFFFF);
+      /* background: radial-gradient(at center, #a3d5ec, #FFFFFF); */
+      background-color: white !important;
       padding: 0% 0;
       position: relative;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -242,8 +243,8 @@
     }
 
     .right-first-row .r-f-r-2 {
-      min-width: 45vw;
-      max-width: 55vw;
+      min-width: 55vw;
+      max-width: 65vw;
       background-color: red;
       position: relative;
       opacity: 0;
@@ -251,8 +252,8 @@
     }
 
     .r-f-r-2-toggle {
-      min-width: 62vw !important;
-      max-width: 72vw !important;
+      min-width: 72vw !important;
+      max-width: 82vw !important;
       background-color: rgb(77, 255, 6) !important;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -436,16 +437,19 @@
 
     .fa-comment,
     .fa-robot {
-      background-color: black !important;
-      color: #ffffff !important;
-      padding: .75rem;
-      min-width: 2.5rem;
+      /* background-color: black !important; */
+      color: #000000 !important;
+      /* padding: .75rem; */
+      /* min-width: 2.5rem; */
+      max-height: 2rem;
       margin-right: 0 !important;
       display: flex;
       align-items: center;
+      font-size: 1.5rem;
       justify-content: flex-start;
-      /* border-radius: 50%; */
+      border-radius: 50%;
     }
+
 
 
 
@@ -456,8 +460,8 @@
       color: #000000 !important;
       display: inline-flex;
       align-items: center;
-      text-decoration: 2px underline;
-      text-underline-offset: 8px;
+      /* text-decoration: 2px underline;
+      text-underline-offset: 8px; */
       margin-left: 1.5rem;
     }
 
@@ -631,9 +635,9 @@
         sss
       </div>
 
-      <div class="r-f-r-3">
+      <!-- <div class="r-f-r-3">
         Login/SignUp
-      </div>
+      </div> -->
       <div class="r-f-r-5">
         <i class="fa-solid fa-gears"></i>
       </div>
@@ -774,7 +778,7 @@
     if (sender === 'user') {
       messageElement.classList.add('user-message');
       messageElement.innerHTML = `<div class="user-you-main">
-      <i class="fa-solid fa-comment"></i> <span class="user-you">You</span>
+      <img src="https://lh3.googleusercontent.com/ogw/AF2bZyjXxy2E2tneorvONmFtJc51aDpVK1E6jsc-3YqvC6I=s32-c-mo" class="fa-comment" /> <span class="user-you">You</span>
       </div> 
       <br>
       ${message}`;
