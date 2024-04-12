@@ -14,6 +14,10 @@ def submit():
     # Generate a demo response message
     response = "This is a demo response to the question: " + question
     
+     # Print the response message in the terminal
+    #  
+    print("The Question is:", question)
+    
     # Return the response message
     return response
 
