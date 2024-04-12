@@ -17,7 +17,9 @@
 
   <style>
     /* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); */
-    @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); */
 
     * {
       padding: 0;
@@ -25,7 +27,9 @@
       box-sizing: border-box;
       font-size: 16px;
       line-height: 1.5;
-      font-family: "Kode Mono", monospace;
+      /* font-family: "Kode Mono", monospace; */
+      font-family: "Open Sans", sans-serif;
+      /* font-family: "Montserrat", sans-serif; */
       /* font-family: "Josefin Sans", sans-serif; */
     }
 
@@ -119,7 +123,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-weight: 900;
+      font-weight: 500;
       position: sticky;
       top: 0;
     }
@@ -156,7 +160,8 @@
     /* User Prompt date/day saved */
     .daily-prompts-heading {
       margin: 2.5rem 0 1rem;
-      font-size: 1.5rem;
+      font-size: 1rem;
+      font-weight: 900;
       /* text-decoration: 1px solid underline;
       text-underline-offset: 8px; */
     }
@@ -235,7 +240,7 @@
     }
 
     .r-f-r-1 {
-      font-weight: 900;
+      font-weight: 500;
       border: 1px solid #a3d5ec;
       padding: .5rem 1.5rem;
       border-radius: 5px;
@@ -243,7 +248,7 @@
     }
 
     .right-first-row .r-f-r-2 {
-      min-width: 55vw;
+      min-width: 65vw;
       max-width: 65vw;
       background-color: red;
       position: relative;
@@ -252,17 +257,30 @@
     }
 
     .r-f-r-2-toggle {
-      min-width: 72vw !important;
+      min-width: 82vw !important;
       max-width: 82vw !important;
       background-color: rgb(77, 255, 6) !important;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @media screen and (max-width: 1600px) {
+
+      .right-first-row .r-f-r-2 {
+        min-width: 60vw;
+        max-width: 60vw;
+      }
+
+      .r-f-r-2-toggle {
+        min-width: 78vw !important;
+        max-width: 78vw !important;
+      }
     }
 
     .r-f-r-3 {
       border: 2px solid #a3d5ec;
       padding: .5rem 1.5rem;
       background-color: #a3d5ec;
-      font-weight: 900;
+      font-weight: 200;
       border-radius: 5px;
       /* cursor: pointer; */
     }
@@ -272,7 +290,7 @@
     }
 
     .r-f-r-5 {
-      margin: 0 1rem;
+      margin: 0rem;
     }
 
     /* ----------------------------- */
@@ -284,17 +302,22 @@
     }
 
     .right-second-row h2 {
-      background: -webkit-linear-gradient(180deg, #00aeff, #e100ff);
+      /* background: -webkit-linear-gradient(180deg, #00aeff, #e100ff);
       background: linear-gradient(180deg, #00aeff, #e100ff);
       -webkit-background-clip: text;
-      background-clip: text;
-      font-size: 7rem;
-      -webkit-text-fill-color: transparent;
+      background-clip: text; */
+      color: black !important;
+      font-size: 6rem;
+      margin-top: 2rem;
+      font-weight: 500 !important;
+
+      /* -webkit-text-fill-color: transparent; */
     }
 
     .right-second-row h4 {
-      font-size: 3rem !important;
+      font-size: 1.6rem !important;
       opacity: 1;
+      font-weight: 500 !important;
       margin-top: 1rem;
     }
 
@@ -313,18 +336,19 @@
     .right-third-row .prompt {
       border: .5px solid black;
       margin: 3.5% 1% 3.5% 0;
-      min-height: 20rem;
+      min-height: 16rem;
       max-width: 25%;
       padding: 1.5rem;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       border-radius: 5px;
       position: relative;
       overflow: hidden;
     }
 
     .prompt:hover {
-      background: -webkit-linear-gradient(120deg, #75d3ff, #8dff76);
-      background: linear-gradient(120deg, #75d3ff, #8dff76);
+      /* background: -webkit-linear-gradient(120deg, #75d3ff, #8dff76);
+      background: linear-gradient(120deg, #75d3ff, #8dff76); */
+      background-color: #a3d5ec;
     }
 
     .right-third-row .prompt:before {
@@ -351,6 +375,27 @@
 
     .right-third-row .prompt:last-child {
       margin: 0;
+    }
+
+    .prompt i {
+      position: absolute;
+      right: 5%;
+      bottom: 5%;
+      color: #00aeff;
+      background-color: white !important;
+      padding: .5rem;
+      border-radius: 50%;
+      font-size: 1.25rem;
+    }
+
+    /* .prompt2 i::before {
+      content: "Funny";
+      letter-spacing: 2px;
+      margin-right: 2rem;
+    } */
+
+    .prompt:hover i {
+      color: #000000 !important;
     }
 
     /* ----------------------------- */
@@ -395,6 +440,17 @@
       padding: 0 !important;
       border-bottom: 1px solid #ccc;
     }
+
+    .last-section-prompt input::placeholder {
+      color: rgb(119, 114, 114) !important;
+      opacity: 1 !important;
+    }
+
+    input:focus::placeholder {
+      color: transparent !important;
+      opacity: 0 !important;
+    }
+
 
     /* Both i tag inside the last row */
     .i-tag-prompt {
@@ -450,9 +506,6 @@
       border-radius: 50%;
     }
 
-
-
-
     span.user-you,
     span.user-you-2 {
       font-weight: 900;
@@ -474,17 +527,18 @@
 
       .right-second-row {
         min-width: 65vw;
-        padding-top: 2rem;
+        padding-top: 1.15rem;
       }
 
       .right-second-row h2 {
-        font-size: 5rem;
+        font-size: 4.5rem;
+        margin-top: 0;
       }
 
       .right-second-row h4 {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
         margin-top: .5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.15rem;
       }
 
       .right-third-row {
@@ -500,7 +554,7 @@
 
       .right-third-row .prompt {
         font-size: 1.1rem;
-        min-height: 15rem;
+        min-height: 12rem;
       }
     }
 
@@ -510,7 +564,7 @@
       }
 
       .right-second-row h4 {
-        font-size: 1.5rem !important;
+        font-size: 1.25rem !important;
         margin-top: .5rem;
       }
 
@@ -650,27 +704,33 @@
 
     <div class="right-second-row">
       <h2>
-        Hello John.
+        Hello John
       </h2>
       <h4>
-        How Can I Help You Today.
+        How Can I Help You Today ?
         <!-- <span id="app"></span> -->
       </h4>
     </div>
 
 
     <div class="right-third-row">
-      <div class="prompt prompt1">What is the long-term safety profile of Talimizumab in pediatric patients?</div>
-      <div class="prompt prompt2">What were the reported adverse events in the Phase II trial of Talimizumab?</div>
-      <div class="prompt prompt3">Provide a cost-benefit analysis report of Talimizumab vs. its competitors.</div>
-      <div class="prompt prompt4">Provide a comparative analysis of Talimizumab vs. standard treatment.</div>
+      <div class="prompt prompt1">What is the long-term safety profile of Talimizumab in pediatric patients?<i
+          class="fa-regular fa-face-laugh"></i>
+      </div>
+      <div class="prompt prompt2">What were the reported adverse events in the Phase II trial of Talimizumab?<i
+          class="fa-solid fa-filter"></i></div>
+      <div class="prompt prompt3">Provide a cost-benefit analysis report of Talimizumab vs. its competitors.<i
+          class="fa-solid fa-notes-medical"></i></div>
+      <div class="prompt prompt4">Provide a comparative analysis of Talimizumab vs. standard treatment.<i
+          class="fa-solid fa-chart-simple"></i></div>
     </div>
 
     <!-- Container -->
     <div id="chatContainer" class="typewriter"></div>
 
     <div class="last-section-prompt">
-      <input type="text" class="no-outline" id="inputField" placeholder="Enter Something">
+      <input type="text" class="no-outline" id="inputField"
+        placeholder="Ask Me Anything to powerUp Business Decisions...">
       <div class="i-tag-prompt">
         <i class="fa-solid fa-location-arrow" id="sendDataBtn"></i>
         <!-- <i class="fa-solid fa-circle-play" id="process"></i> -->
