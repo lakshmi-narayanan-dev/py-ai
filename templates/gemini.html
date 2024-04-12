@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open AI</title>
+  <title>LAME</title>
   <!-- <link rel="stylesheet" href="./style.css"> -->
 
   <!-- Favicon -->
@@ -239,17 +239,18 @@
       border-bottom: 1px solid #527375;
     }
 
-    .r-f-r-1 {
-      font-weight: 500;
-      border: 1px solid #a3d5ec;
-      padding: .5rem 1.5rem;
-      border-radius: 5px;
+    .r-f-r-1 img {
+      /* font-weight: 500; */
+      /* border: 1px solid #a3d5ec; */
+      /* padding: .5rem 1.5rem; */
+      /* border-radius: 5px; */
+      max-height: 3rem;
 
     }
 
     .right-first-row .r-f-r-2 {
-      min-width: 65vw;
-      max-width: 65vw;
+      min-width: 60vw;
+      max-width: 60vw;
       background-color: red;
       position: relative;
       opacity: 0;
@@ -257,8 +258,8 @@
     }
 
     .r-f-r-2-toggle {
-      min-width: 82vw !important;
-      max-width: 82vw !important;
+      min-width: 77vw !important;
+      max-width: 77vw !important;
       background-color: rgb(77, 255, 6) !important;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -266,13 +267,13 @@
     @media screen and (max-width: 1600px) {
 
       .right-first-row .r-f-r-2 {
-        min-width: 60vw;
-        max-width: 60vw;
+        min-width: 55vw;
+        max-width: 55vw;
       }
 
       .r-f-r-2-toggle {
-        min-width: 78vw !important;
-        max-width: 78vw !important;
+        min-width: 72vw !important;
+        max-width: 72vw !important;
       }
     }
 
@@ -684,7 +685,7 @@
     </div>
     <div class="right-first-row">
       <div class="r-f-r-1">
-        Master AI
+        <img src="https://geraldarundass.com/AI/Logos/Logo4.png" alt="Image" title="img">
       </div>
       <div class="r-f-r-2" id="r-f-r-2">
         sss
@@ -846,7 +847,7 @@
 
     } else {
       messageElement.classList.add('bot-message');
-      messageElement.innerHTML = `<div class="user-you-main"><i class="fas fa-robot"></i> <span class="user-you-2">MasterAI</span> </span>
+      messageElement.innerHTML = `<div class="user-you-main"><i class="fas fa-robot"></i> <span class="user-you-2">The AI Master</span> </span>
         </div>
       <br>
       ${message}`;
