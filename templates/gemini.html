@@ -239,7 +239,8 @@
       min-width: 100%;
       padding: .75rem 2rem;
       background-color: white;
-      border-bottom: 1px solid #527375;
+      border-bottom: 2px solid #a3d5ec;
+      background-color: #d3ecf8;
     }
 
     .r-f-r-1 img {
@@ -252,33 +253,46 @@
     }
 
     .right-first-row .r-f-r-2 {
-      min-width: 60vw;
-      max-width: 60vw;
+      min-width: 66vw;
+      max-width: 66vw;
       background-color: red;
       position: relative;
-      opacity: 0;
+      opacity: 0 !important;
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .r-f-r-2-toggle {
-      min-width: 77vw !important;
-      max-width: 77vw !important;
-      background-color: rgb(77, 255, 6) !important;
+      min-width: 83vw !important;
+      max-width: 83vw !important;
+      /* background-color: rgb(77, 255, 6) !important; */
       transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     @media screen and (max-width: 1600px) {
 
       .right-first-row .r-f-r-2 {
-        min-width: 55vw;
-        max-width: 55vw;
+        min-width: 62vw;
+        max-width: 62vw;
       }
 
       .r-f-r-2-toggle {
-        min-width: 72vw !important;
-        max-width: 72vw !important;
+        min-width: 79vw !important;
+        max-width: 79vw !important;
       }
     }
+
+    /* @media screen and (max-width: 1450px) {
+
+      .right-first-row .r-f-r-2 {
+        min-width: 60vw;
+        max-width: 60vw;
+      }
+
+      .r-f-r-2-toggle {
+        min-width: 67vw !important;
+        max-width: 67vw !important;
+      }
+    } */
 
     .r-f-r-3 {
       border: 2px solid #a3d5ec;
@@ -506,11 +520,11 @@
       justify-content: flex-start;
     }
 
-    .fa-comment,
-    .fa-robot {
+    .comment,
+    .robot {
       /* background-color: black !important; */
       color: #000000 !important;
-      padding: .5rem;
+      padding: 1rem;
       max-height: 3rem;
       margin-right: 0 !important;
       display: flex;
@@ -519,17 +533,20 @@
       justify-content: flex-start;
       border-radius: 50%;
       /* border-radius: 40% 60% 72% 28% / 40% 30% 70% 60%; */
-      background-color: #a3d5ec;
+      background-color: transparent;
+      border: 2px solid #a3d5ec;
+      font-weight: 900;
     }
 
-    .fa-comment {
+
+    /* .fa-comment {
       padding-left: .75rem;
-    }
+    } */
 
-    .fa-robot {
+    /* .fa-robot {
       min-height: 3.2rem;
       max-height: 3.2rem;
-    }
+    } */
 
     span.user-you,
     span.user-you-2 {
@@ -583,13 +600,13 @@
 
       .right-third-row .prompt {
         font-size: 1.1rem;
-        min-height: 12rem;
+        min-height: 14rem;
       }
     }
 
     @media screen and (max-width:1450px) {
       .right-second-row h2 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
       }
 
       .right-second-row h4 {
@@ -604,7 +621,7 @@
 
       .right-third-row .prompt {
         font-size: 1rem;
-        min-height: 12rem;
+        /* min-height: 14rem; */
       }
     }
 
@@ -718,7 +735,7 @@
     </div>
     <div class="right-first-row">
       <div class="r-f-r-1">
-        <img src="https://geraldarundass.com/AI/Logos/Logo4.png" alt="Image" title="img">
+        <img src="https://geraldarundass.com/AI/Logos/Logo-Vairam2.png" alt="Image" title="img">
       </div>
       <div class="r-f-r-2" id="r-f-r-2">
         sss
@@ -750,22 +767,24 @@
       <div class="Ask-anything-like">
         Ask Anything Like,
       </div>
-      <div class="prompt prompt1" data-aos="fade-up" data-aos-delay="1500">What is the long-term safety profile of
-        Talimizumab in pediatric patients?<i class="fa-regular fa-face-laugh"></i>
+      <div class="prompt prompt1" data-aos="fade-up" data-aos-delay="1500">What is the long-term safety of inhaled
+        Ciclesonide on growth in children with asthma?<i class="fa-regular fa-face-laugh"></i>
       </div>
-      <div class="prompt prompt2" data-aos="fade-up" data-aos-delay="1700">What were the reported adverse events in the
-        Phase II trial of Talimizumab?<i class="fa-solid fa-filter"></i></div>
-      <div class="prompt prompt3" data-aos="fade-up" data-aos-delay="1900">Provide a cost-benefit analysis report of
-        Talimizumab vs its competitors.<i class="fa-solid fa-notes-medical"></i></div>
-      <div class="prompt prompt4" data-aos="fade-up" data-aos-delay="2100">Provide a comparative analysis of Talimizumab
-        vs standard treatment.<i class="fa-solid fa-chart-simple"></i></div>
+      <div class="prompt prompt2" data-aos="fade-up" data-aos-delay="1700">What are the primary determinants of maternal
+        mortality around the world?<i class="fa-solid fa-filter"></i></div>
+      <div class="prompt prompt3" data-aos="fade-up" data-aos-delay="1900">
+        Provide a cost-benefit summary of the economic burden of chronic kidney disease globally<i
+          class="fa-solid fa-notes-medical"></i></div>
+      <div class="prompt prompt4" data-aos="fade-up" data-aos-delay="2100">
+        Provide a comparative analysis summary of the diagnostic performance between generative AI and physicians<i
+          class="fa-solid fa-chart-simple"></i></div>
     </div>
 
     <!-- Container -->
     <div id="chatContainer" class="typewriter"></div>
 
     <div class="last-section-prompt">
-      <input type="text" class="no-outline" id="inputField" placeholder="Search Your Answers with Sherlock...">
+      <input type="text" class="no-outline" id="inputField" placeholder="Search Your Answers with Vairam...">
       <div class="i-tag-prompt">
         <i class="fa-solid fa-location-arrow" id="sendDataBtn"></i>
         <!-- <i class="fa-solid fa-circle-play" id="process"></i> -->
@@ -858,7 +877,7 @@
     if (sender === 'user') {
       messageElement.classList.add('user-message');
       messageElement.innerHTML = `<div class="user-you-main">
-      <img src="https://geraldarundass.com/AI/Logos/User.png" class="fa-comment" alt="image" /> <span class="user-you">You</span>
+      <span class="comment">Q</span> <span class="user-you">You</span>
       </div> 
       <br>
       ${message}`;
@@ -866,7 +885,7 @@
     } else {
       messageElement.classList.add('bot-message');
       messageElement.innerHTML = `<div class="user-you-main">
-         <img src="https://geraldarundass.com/AI/Logos/Bot.png" class="fa-robot" alt="image" /><span class="user-you-2">Sherlock</span>
+         <span class="robot">A</span><span class="user-you-2">Vairam</span>
         </div>
       <br>
       ${message}`;
@@ -886,8 +905,16 @@
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }, 0);
 
+    var screenWidth = window.innerWidth;
+
+    if (screenWidth < 1600) { // Small devices (phones)
+      messageElement.style.margin = '1.5rem 0 0 0'; // Adjust margin for small devices
+    } else if (screenWidth >= 1600) { // Medium devices (tablets)
+      messageElement.style.margin = '2.5rem 0 0 0'; // Adjust margin for medium devices
+    }
+
     // Add margin or padding to create a gap between messages
-    messageElement.style.margin = '1.5rem 0';
+    // messageElement.style.margin = '3rem 0 0 0';
     // messageElement.style.background = 'yellow'; // Adjust the value as needed
 
     // messageElement.textContent = message;
